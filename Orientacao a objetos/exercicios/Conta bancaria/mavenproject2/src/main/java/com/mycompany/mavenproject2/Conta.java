@@ -12,7 +12,7 @@ public class Conta {
     double saldo;
     int agencia;
     int numero;
-    String titular;
+    Cliente titular;
     
     boolean deposita(double valor){
         this.saldo += valor;
