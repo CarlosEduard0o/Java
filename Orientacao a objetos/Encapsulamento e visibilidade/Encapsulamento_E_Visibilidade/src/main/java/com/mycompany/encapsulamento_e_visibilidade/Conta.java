@@ -16,8 +16,10 @@ public class Conta {
     private int agencia, numero;
     private Cliente titular;
     
-    Conta(double valor_saldo){
+    Conta(double valor_saldo, int agencia, int numero){  //Construtor. Ele só é executado na criação do objeto
         this.saldo += valor_saldo;
+        this.agencia = agencia;
+        this.numero = numero;
     }
     
     public boolean saca(double valor){
@@ -38,7 +40,23 @@ public class Conta {
     }
     
     public void setNumero(int numero){
+        if(numero <= 0){
+            System.out.println("Não pode valor menor igual a 0.");
+            return; //Para não excutar a linha this.numero = numero; Como é void, faz um retorno de nada, mas não executa a outra linha
+        }
         this.numero = numero;
+    }
+
+    public int getAgencia() {
+        return this.agencia;
+    }
+    
+    public void setAgencia(int agencia) {
+        if (agencia < 0){
+            System.out.println("Não pode valor menor igual a 0. ");
+            return; //Para não excutar a linha this.agencia = agencia; Como é void, faz um retorno de nada, mas não executa a outra linha
+        }
+        this.agencia = agencia;
     }
 
     public void setTitular(Cliente titular) {
@@ -49,5 +67,4 @@ public class Conta {
         return titular;
     }
        
-    
 }

@@ -14,11 +14,12 @@ public class Encapsulamento_E_Visibilidade {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner (System.in);
-        int NumeroDaConta, NovoNumeroDaConta;
+        int NumeroDaConta, NovoNumeroDaConta, NumeroDaAgencia;
         String nome, cpf, profissao;
+        double valor;
         //Bom, primeiro foi instanciado um objeto conta (Conta) e carlos (Cliente)
         //Encapsulamos todos os atributos de ambos objetos e criamos os getters e setters
-        Conta conta = new Conta(200);
+        Conta conta = new Conta(200, 1001, 1223);
         Cliente carlos = new Cliente();
         if(conta.saca(150)){
             System.out.println("Saque realizado");
@@ -26,6 +27,13 @@ public class Encapsulamento_E_Visibilidade {
             System.out.println("Não foi possível efetuar o saque. Verifique se há saldo.");
         }
         System.out.println("O novo saldo é de: " + conta.getSaldo());
+        System.out.print("Digite o valor que deseja sacar novamente: ");
+        valor = sc.nextDouble();
+        if(conta.saca(valor)){
+            System.out.println("Saque realizado");
+        } else {
+            System.out.println("Não foi possível efetuar o saque. Verifique se há saldo.");
+        }
         System.out.print("Digite o número da conta: ");
         NumeroDaConta = sc.nextInt();
         conta.setNumero(NumeroDaConta);
@@ -34,6 +42,16 @@ public class Encapsulamento_E_Visibilidade {
         NovoNumeroDaConta = sc.nextInt();
         conta.setNumero(NovoNumeroDaConta);
         System.out.println("O novo número da conta é: " + conta.getNumero());
+        System.out.print("Digite o número da agência: ");
+        NumeroDaAgencia = sc.nextInt();
+        conta.setAgencia(NumeroDaAgencia);
+        System.out.print("O numero da agencia é: ");
+        System.out.println(conta.getAgencia());
+        System.out.print("Digite novamente o número da agência: ");
+        NumeroDaAgencia = sc.nextInt();
+        conta.setAgencia(NumeroDaAgencia);
+        System.out.print("O numero da agencia é: ");
+        System.out.println(conta.getAgencia());
         System.out.print("Digite o nome do cliente: ");
         nome = sc.next();
         
