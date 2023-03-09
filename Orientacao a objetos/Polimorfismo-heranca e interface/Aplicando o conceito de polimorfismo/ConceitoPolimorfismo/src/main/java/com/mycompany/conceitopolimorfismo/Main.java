@@ -34,6 +34,14 @@ public class Main {
         gerente.setSalario(15898.3);            //Porque, Gerente e gestor são filhos do Funcionario
         gerente.setIdade(41);                    //Esse é o conceito que explica porque na classe ControleBonificacao eu posso colocar somente um   
         controle.registra(gerente);         //metodo para todos os funcionários ao inves de um método para cada funcionário, como está comentado lá.                                 
+        
+        Tester tester = new Tester ();
+        tester.setNome("Edson");
+        tester.setCpf("333.956.416-47");
+        tester.setSalario(2800.3);
+        tester.setIdade(31);
+        controle.registra(tester);
+        
         System.out.printf("%.2f" ,controle.getSoma());
         
     }
