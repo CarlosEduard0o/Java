@@ -12,5 +12,10 @@ public class ContaPoupanca extends Conta {
     public ContaPoupanca(int agencia, int numero){  //Estou criando um construtor específico, com os argumentos do construtor mãe, senão não funciona
         super(agencia, numero);                     //Estou usando o construtor mãe para passar os parâmetros para o chamado do construtor específico   
     }
+
+    @Override
+    public void deposita(double valor) {
+        super.saldo += valor;                   //Implementação adicionada por conta da classe Conta (mãe) ser abstract
+    }
     
 }

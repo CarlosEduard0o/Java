@@ -18,6 +18,11 @@ public class ContaCorrente extends Conta {
         double valorASacar = valor + 0.2;
         return super.saca(valorASacar); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
+
+    @Override
+    public void deposita(double valor) {
+        super.saldo += valor;                   //Implementação adicionada por conta da classe Conta (mãe) ser abstract
+    }
     
     
 }

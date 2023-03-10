@@ -8,9 +8,9 @@ package com.mycompany.main;
  *
  * @author carlosrosa
  */
-public class Conta {
-        private double saldo; 
-        private int numero, agencia; 
+public abstract class Conta {
+        protected double saldo;             //Após declarar essa classe como abstract eu tenho que inserir as implementações no método deposita pela ContaCorrente e ContaPoupança
+        private int numero, agencia;        //Por isso passei o saldo para protected, antes ele estava private. Assim o saldo fica disponível para as classes filhas.
         private Cliente titular; 
         private static int total = 0;
         
@@ -27,9 +27,7 @@ public class Conta {
             //System.out.println("Estou crianto uma conta " + this.numero);
         }
         
-        public void deposita(double valor){
-            this.saldo += valor;
-        }
+        public abstract void deposita(double valor); //Como a classe Conta é abstract, não preciso colocar a implementação aqui, agora coloco nas classes filhas
         
         public boolean saca(double valor){
         if(this.saldo >= valor) {
