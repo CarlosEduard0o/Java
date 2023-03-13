@@ -11,20 +11,19 @@ package com.mycompany.conceitos_abstract;
 //public class Cliente extends Autenticavel {
 //A classe cliente assina Autenticavel
     public class Cliente implements Autenticavel {  //Alterado de extends para implements, pois Autenticavel passou a ser uma interface e não da para herdar interface
-        private String senha;
+        private AutenticacaoUtil autenticador;
+        
+        public Cliente(){
+        this.autenticador = new AutenticacaoUtil();
+    }
 
     @Override
     public void setSenha(String senha) {
-        this.senha = senha;
+        this.autenticador.setSenha(senha);
     }
 
     @Override
     public boolean autentica(String senha) {        //Agora temos que assinar o Autenticavel, e o implements faz isso. 
-        if (this.senha == senha){                   //Podemos então adicionar o que for concreto aqui.                    
-            return true;
-        } else {
-            return false;
-        }
-    }
-                                                       
+        return this.autenticador.autentica(senha);                   //Podemos então adicionar o que for concreto aqui.                            
+    }                                           
 }

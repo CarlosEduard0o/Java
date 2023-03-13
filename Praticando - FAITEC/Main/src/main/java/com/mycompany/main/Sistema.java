@@ -11,11 +11,6 @@ package com.mycompany.main;
 public class Sistema {
     private String senha = "2222";
     private int matricula = 3;
-//    private String nome;
-
-//    public void setNome(String nome) {
-//        this.nome = nome;
-//    }
     
     public void autentica (Autenticavel pessoa){
         boolean autenticou = pessoa.autentica(this.senha, this.matricula);

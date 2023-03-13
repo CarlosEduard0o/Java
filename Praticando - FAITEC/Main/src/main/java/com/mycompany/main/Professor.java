@@ -7,37 +7,32 @@ package com.mycompany.main;
 /**
  *
  * @author carlosrosa
+ * VISUALIZAÇÕES/FUNÇÕES DO PROFESSOR:
+ * POSTAR / VISUALIZAR NOTAS;
+ * POSTAR / VISUALIZAR PRESENÇA DA TURMA;
+ * POSTAR / VISUALIZAR MATERIAL;
+ * ABRIR / DELETAR TURMAS;
+ * COMPARAR NOTA DE TURMAS;
  */
 public class Professor extends Pessoas implements Autenticavel {
     private String senha;
     private int matricula;
+    private AutenticacaoUtil autenticacao;
     
-//VISUALIZAÇÕES/FUNÇÕES DO PROFESSOR:
-//POSTAR / VISUALIZAR NOTAS;
-//POSTAR / VISUALIZAR PRESENÇA DA TURMA;
-//POSTAR / VISUALIZAR MATERIAL;
-//ABRIR / DELETAR TURMAS;
-//COMPARAR NOTA DE TURMAS;}
+    public Professor(){
+        this.autenticacao = new AutenticacaoUtil();
+    } 
     
     public void setSenha(String senha) {
-        this.senha = senha;
+        this.autenticacao.setSenha(senha);
     }
-    
+    @Override
     public void setMatricula(int matricula) {
-        this.matricula = matricula;
+        this.autenticacao.setMatricula(matricula);
     }
-    
-//    @Override
-//    public void setNome(String nome) {
-//        this.nome = nome;
-//    }
-    
+
     public boolean autentica(String senha, int matricula) {
-        if ((this.senha == senha) && (this.matricula == matricula)){                   //Podemos então adicionar o que for concreto aqui.                    
-            return true;
-        } else {
-            return false;
-        }
+        return this.autenticacao.autentica(senha, matricula);
     }
 }
  

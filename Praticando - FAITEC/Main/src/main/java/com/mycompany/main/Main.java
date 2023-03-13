@@ -17,10 +17,10 @@ public class Main {
         Sistema sistema = new Sistema();
                 
         aluno.setSenha("2222");
-        aluno.setMatricula(1);
+        aluno.setMatricula(3);
         aluno.setNome("Carlos");
         professor.setSenha("2222");
-        professor.setMatricula(2);
+        professor.setMatricula(3);
         professor.setNome("Eduardo");
         administrador.setSenha("2222");
         administrador.setMatricula(3);

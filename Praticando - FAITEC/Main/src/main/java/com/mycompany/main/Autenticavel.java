@@ -9,6 +9,5 @@ package com.mycompany.main;
  * @author carlosrosa
  */
 public abstract interface Autenticavel {
-//  public abstract void setNome(String nome);
     public abstract boolean autentica (String senha, int matricula);
 }

@@ -11,6 +11,11 @@ package com.mycompany.conceitos_abstract;
 //A classe administrador é funcionario e assina autenticavel
 public class Administrador extends Funcionario implements Autenticavel {
     private String senha;
+    private AutenticacaoUtil autenticador;
+    
+    public Administrador(){
+    this.autenticador = new AutenticacaoUtil();
+    }
     
     public double getBonificacao(){
         return 1000;
@@ -30,15 +35,11 @@ public class Administrador extends Funcionario implements Autenticavel {
 
     @Override
     public void setSenha(String senha) {
-        this.senha = senha;
+        this.autenticador.setSenha(senha);
     }
 
     @Override
-    public boolean autentica(String senha) {
-        if (this.senha == senha){                   //Podemos então adicionar o que for concreto aqui.                    
-            return true;
-        } else {
-            return false;
-        }
+    public boolean autentica(String senha) {        //Agora temos que assinar o Autenticavel, e o implements faz isso. 
+        return this.autenticador.autentica(senha);                   //Podemos então adicionar o que for concreto aqui.                            
     }
 }

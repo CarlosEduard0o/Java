@@ -38,13 +38,5 @@ public abstract class Pessoas {
 
     public void setMatricula(int matricula) {
         this.matricula = matricula;
-    }
-
-//    public void setSenha(String senha) {
-//        this.senha = senha;
-//    }
-    
-    
-    
-    
+    }   
  }
